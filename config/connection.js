@@ -6,11 +6,11 @@ var connection = mysql.createConnection({
     user: "root", 
     password: "12345678",
     database: "burger_db",
-})
+});
 
 connection.connect(function(err){
     if(err){
-        console.log("Error connecting: "+err.stack)
+        console.log("Error connecting: "+err.stack);
         return;
     }
     console.log("Connected as id "+ connection.threadId);
