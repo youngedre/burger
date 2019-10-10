@@ -41,7 +41,7 @@ var orm = {
         query += cols.toString();
         query += ") ";
         query += "VALUES (";
-        query += qMarks(vals.length);
+        query += printqMarks(vals.length);
         query += ") ";
         console.log(query);
 
@@ -74,7 +74,7 @@ var orm = {
 
 var connection = require("./connection.js");
 
-function qMarks(num) {
+function printqMarks(num) {
     var arr = [];
     for (var i = 0; i < num; i++) {
         arr.push("?");
@@ -114,7 +114,7 @@ var orm = {
         query += cols.toString();
         query += ") ";
         query += "VALUES (";
-        query += qMarks(vals.length);
+        query += printqMarks(vals.length);
         query += ") ";
         console.log(query);
 
