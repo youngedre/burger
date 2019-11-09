@@ -1,0 +1,22 @@
+.btn-primary{
+    display: inline-flex;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.burgerImg{
+    margin: 20px auto;
+}
+.card{
+    display: inline-block;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.burgerContainer{
+    width: 100%;
+    margin: 10px auto;
+}
+.container{
+    background-color: red
+}

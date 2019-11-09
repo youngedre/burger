@@ -1,0 +1,50 @@
+<div class="row">    
+    <section class="col-12">
+        <h1 class="text-center">Burgers!</h1>
+        <img class="burgerImg" src="\assets\images\burger.jpg" style="max-width: 200px">
+    </section>
+</div>
+<div class="row">    
+    <section class="col-12">
+        <form action="/api/burgers" method="POST" class="text-center create">
+            <div>
+                <label for="burger">Burger Name:</label>
+                <input type="text" id="burger" name="burger" placeholder="Bacon Cheese Burger">
+            </div>
+            <button type="submit">Add burger</button>
+        </form>
+    </section>
+</div>
+<div class="row">    
+    <section class="col-6">
+        <h2 class="text-center">Burgers not devoured</h2>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <div class="row">
+                        <div class="card col-7">
+                            <span class="text-center">{{this.burger_name}}</span>
+                        </div>
+                        <button type="button" id="devour" data-burgerid={{this.id}} class="btn-primary col-4" >Eat it</button>
+                    </div>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </section>
+    
+    <section class="col-6 burgerContainer">
+        <h2 class="text-center">Burgers devoured</h2>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                     <div class="row">
+                        <div class="card col-7">
+                            <span class="text-center">{{this.burger_name}}</span>
+                        </div>
+                        <button type="button" id="undevour" data-burgerid={{this.id}} class="btn-primary col-4" >Put it Back</button>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </section>
+</div>

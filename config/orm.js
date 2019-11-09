@@ -38,7 +38,7 @@ var orm = {
     insertOne: function(table, col, vals, cb){
         var query = "Insert into " + table;
         query += " (";
-        query += cols.toString();
+        query += col.toString();
         query += ") ";
         query += "VALUES (";
         query += printqMarks(vals.length);
@@ -49,10 +49,11 @@ var orm = {
             if(err){
                 throw err;
             }
+           cb(result)
         });
     },
 
-    update: function(table, objColVals, condition, cb) {
+    updateOne: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
     
         queryString += " SET ";
